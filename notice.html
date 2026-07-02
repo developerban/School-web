@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Announcements & Notices | Great School</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="notice.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        EduKids<span>.</span>
+    </div>
+
+    <div class="nav-right">
+
+        <button id="adminLoginBtn" class="admin-btn">
+            <i class="fas fa-user-shield"></i>
+            Login as Admin
+        </button>
+
+        <button id="logoutBtn" class="logout-btn hidden">
+            <i class="fas fa-right-from-bracket"></i>
+            Logout
+        </button>
+
+    </div>
+
+</header>
+
+<!-- ================= HERO ================= -->
+
+<section class="notice-hero">
+
+    <span class="badge">
+        SCHOOL NOTICE BOARD
+    </span>
+
+    <h1>
+        Announcements & Notices
+    </h1>
+
+    <p>
+        Stay updated with the latest announcements, examinations,
+        holidays, admissions and important school information.
+    </p>
+
+</section>
+
+<!-- ================= ADMIN PANEL ================= -->
+
+<section id="adminPanel" class="admin-panel hidden">
+
+    <button id="uploadBtn" class="upload-btn">
+
+        <i class="fas fa-plus-circle"></i>
+
+        Upload Notice
+
+    </button>
+
+</section>
+
+<!-- ================= NOTICE LIST ================= -->
+
+<section class="notice-section">
+
+    <div id="noticeContainer" class="notice-grid">
+
+        <!-- Firebase Notices Here -->
+
+    </div>
+
+</section>
+
+<!-- ================= LOGIN MODAL ================= -->
+
+<div id="loginModal" class="modal">
+
+    <div class="modal-box">
+
+        <button class="close-btn" id="closeLogin">
+
+            &times;
+
+        </button>
+
+        <h2>
+
+            <i class="fas fa-user-lock"></i>
+
+            Admin Login
+
+        </h2>
+
+        <form id="loginForm">
+
+            <div class="input-group">
+
+                <label>Email</label>
+
+                <input
+                    type="email"
+                    id="loginEmail"
+                    placeholder="admin@yourschool.com"
+                    required>
+
+            </div>
+
+            <div class="input-group">
+
+                <label>Password</label>
+
+                <input
+                    type="password"
+                    id="loginPassword"
+                    placeholder="Enter password"
+                    required>
+
+            </div>
+
+            <button
+                type="submit"
+                class="primary-btn">
+
+                Login
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<!-- ================= UPLOAD MODAL ================= -->
+
+<div id="uploadModal" class="modal">
+
+    <div class="modal-box">
+
+        <button class="close-btn" id="closeUpload">
+
+            &times;
+
+        </button>
+
+        <h2>
+
+            <i class="fas fa-bullhorn"></i>
+
+            Upload Notice
+
+        </h2>
+
+        <form id="noticeForm">
+
+            <!-- Title -->
+
+            <div class="input-group">
+
+                <label>
+
+                    Notice Title
+
+                </label>
+
+                <input
+                    type="text"
+                    id="noticeTitle"
+                    placeholder="Annual Examination"
+                    required>
+
+            </div>
+
+            <!-- Category -->
+
+            <div class="input-group">
+
+                <label>
+
+                    Category
+
+                </label>
+
+                <select id="noticeCategory">
+
+                    <option>General</option>
+
+                    <option>Holiday</option>
+
+                    <option>Exam</option>
+
+                    <option>Admission</option>
+
+                    <option>Festival</option>
+
+                    <option>Event</option>
+
+                </select>
+
+            </div>
+
+            <!-- Description -->
+
+            <div class="input-group">
+
+                <label>
+
+                    Description
+
+                </label>
+
+                <textarea
+                    id="noticeDescription"
+                    rows="6"
+                    placeholder="Write your notice..."
+                    required></textarea>
+
+            </div>
+
+            <!-- Hidden for Edit -->
+
+            <input
+                type="hidden"
+                id="noticeId">
+
+            <button
+                type="submit"
+                class="primary-btn">
+
+                Publish Notice
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<!-- ================= LOADER ================= -->
+
+<div id="loader" class="loader hidden">
+
+    <div class="spinner"></div>
+
+</div>
+
+<!-- ================= FIREBASE ================= -->
+
+<script type="module" src="js/firebase-config.js"></script>
+
+<script type="module" src="notice.js"></script>
+
+</body>
+</html>
