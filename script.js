@@ -424,9 +424,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let isValid = true;
 
             const name = document.getElementById('contactName').value.trim();
-            const email = document.getElementById('contactEmail').value.trim();
             const phone = document.getElementById('contactPhone').value.trim();
-            const program = document.getElementById('contactProgram').value;
             const message = document.getElementById('contactMessage').value.trim();
 
             if (name === '') {
