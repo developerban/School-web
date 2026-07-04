@@ -434,11 +434,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 isValid = false;
             }
 
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                document.getElementById('emailError').textContent = 'Please enter a valid email address.';
-                isValid = false;
-            }
 
             const phoneDigits = phone.replace(/\D/g, '');
             if (phoneDigits.length < 10) {
@@ -446,10 +441,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 isValid = false;
             }
 
-            if (program === '') {
-                document.getElementById('programError').textContent = 'Please select a program.';
-                isValid = false;
-            }
 
             if (message === '') {
                 document.getElementById('messageError').textContent = 'Please enter a message.';
@@ -466,12 +457,6 @@ ${name}
 
 📞 Phone:
 ${phone}
-
-📧 Email:
-${email}
-
-📚 Program:
-${program}
 
 💬 Message:
 ${message}`;
