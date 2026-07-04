@@ -457,7 +457,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             if (isValid) {
-                const whatsappNumber = "917321456789";
+                const whatsappNumber = "917321820976";
 
                 const formattedMessage = `🎓 *New Admission Inquiry*
 
